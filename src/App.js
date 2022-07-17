@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom"
+import ComingSoon from './pages/ComingSoon'
+import SingleProductPage from './pages/SingleProductPage';
+// import Navbar from './components/Navbar';
+import Products from './pages/Products';
+import { StateContext } from './context/stateContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <StateContext>
+        {/* <Navbar /> */}
+        <Routes>
+          <Route exact path="/" element={<ComingSoon />} />
+          <Route exact path="/product" element={<Products />} />
+          <Route exact path="/product/:slug" element={<SingleProductPage />} />
+          <Route exact path="/product/category/:category" element={<Products />} />
+        </Routes>
+      </StateContext>
+    </BrowserRouter>
   );
 }
 
