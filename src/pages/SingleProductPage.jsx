@@ -37,7 +37,7 @@ const SingleProductPage = () => {
             {product && <img className='rounded-lg aspect-square cursor-pointer' src={urlFor(product?.image[imageIndex]).url()} alt="product" />}
             <div className="flex py-4 justify-center lg:justify-start gap-3 mt-5">
               {product?.image?.map((image, idx) => (
-                <img className={`rounded-md w-20 h-20 cursor-pointer border-[4px] ${idx === imageIndex ? 'border-gray-400' : 'border-transparent'}`}
+                <img key={idx} className={`rounded-md w-20 h-20 cursor-pointer border-[4px] ${idx === imageIndex ? 'border-gray-400' : 'border-transparent'}`}
                   src={urlFor(image)}
                   alt="product"
                   onMouseEnter={() => setImageIndex(idx)}

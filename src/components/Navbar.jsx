@@ -12,7 +12,7 @@ import Cart from './Cart'
 const Navbar = () => {
   const { cartItems, setShowCart, showCart } = useStateContext()
   return (
-    <nav className="border-b border-blue-400 bg-blue-200">
+    <nav className="border-b w-screen border-blue-400 bg-blue-200">
       <div className="w-full lg:max-w-7xl mx-auto flex flex-col lg:flex-row justify-center lg:justify-between py-2 items-center">
         <Link className="mb-4 lg:mb-0" to="/">
           <Logo className="w-40 h-40" />
